@@ -1,10 +1,11 @@
 const { ValidationError } = require('mongoose').Error;
-const User = require('../models/user');
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const User = require('../models/user');
 const { successStatus, createSuccessStatus } = require('../utils/consts');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
+
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 function getUserMe(req, res, next) {
@@ -37,7 +38,7 @@ function createUser(req, res, next) {
   bcrypt.hash(password, 10)
     .then((hash) => {
       User.create({
-        email, password: hash, name
+        email, password: hash, name,
       })
         .then((user) => res.status(createSuccessStatus).send(user))
         .catch((err) => {
@@ -72,5 +73,5 @@ function signOut(req, res) {
 }
 
 module.exports = {
-  getUserMe, updateUser, createUser, login, signOut
+  getUserMe, updateUser, createUser, login, signOut,
 };

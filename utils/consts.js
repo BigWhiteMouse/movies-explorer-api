@@ -11,5 +11,14 @@ const unauthorizedErrorStatus = 401;
 const forbiddenErrorStatus = 403;
 const successStatus = 200;
 
-module.exports = {linkRegex, validationErrorStatus, notFoundErrorStatus, otherErrorStatus, createSuccessStatus,
-  conflictErrorStatus, unauthorizedErrorStatus, forbiddenErrorStatus, successStatus}
+module.exports = {
+  linkRegex,
+  validationErrorStatus,
+  notFoundErrorStatus,
+  otherErrorStatus,
+  createSuccessStatus,
+  conflictErrorStatus,
+  unauthorizedErrorStatus,
+  forbiddenErrorStatus,
+  successStatus,
+};

@@ -14,35 +14,41 @@ const createMovieValidator = celebrate({
     movieId: Joi.number().required(),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
-  })
+  }),
 });
 
 const deleteMovieValidator = celebrate({
-    params: Joi.object().keys({
-      movieId: Joi.string().required().hex().length(24),
-    })
+  params: Joi.object().keys({
+    movieId: Joi.string().required().hex().length(24),
+  }),
 });
 
 const updateUserValidator = celebrate({
-    body: Joi.object().keys({
-      name: Joi.string().required().min(2).max(30),
-      email: Joi.string().required().email(),
-    }),
+  body: Joi.object().keys({
+    name: Joi.string().required().min(2).max(30),
+    email: Joi.string().required().email(),
+  }),
 });
 
 const loginValidator = celebrate({
-    body: Joi.object().keys({
-      email: Joi.string().required().email(),
-      password: Joi.string().required(),
-    })
+  body: Joi.object().keys({
+    email: Joi.string().required().email(),
+    password: Joi.string().required(),
+  }),
 });
 
 const createUserValidator = celebrate({
-    body: Joi.object().keys({
-      email: Joi.string().required().email(),
-      password: Joi.string().required(),
-      name: Joi.string().min(2).max(30),
-    })
+  body: Joi.object().keys({
+    email: Joi.string().required().email(),
+    password: Joi.string().required(),
+    name: Joi.string().min(2).max(30),
+  }),
 });
 
-module.exports = {createMovieValidator, deleteMovieValidator, updateUserValidator, loginValidator, createUserValidator}
+module.exports = {
+  createMovieValidator,
+  deleteMovieValidator,
+  updateUserValidator,
+  loginValidator,
+  createUserValidator,
+};

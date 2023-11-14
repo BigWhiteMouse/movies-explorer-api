@@ -24,7 +24,7 @@ function createMovie(req, res, next) {
     thumbnail,
     movieId,
     nameRU,
-    nameEN
+    nameEN,
   } = req.body;
   Movie.create({
     country,
@@ -64,5 +64,5 @@ function deleteMovie(req, res, next) {
 }
 
 module.exports = {
-  getMovies, createMovie, deleteMovie
+  getMovies, createMovie, deleteMovie,
 };
